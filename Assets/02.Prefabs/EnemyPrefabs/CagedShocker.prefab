@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 4742238844559013843}
   - component: {fileID: 8905821799317373118}
   - component: {fileID: 8234373433143799734}
+  - component: {fileID: 5741859841572930841}
   m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
@@ -799,7 +800,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8905821799317373118
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -856,6 +857,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &8234373433143799734
 Animator:
   serializedVersion: 7
@@ -878,6 +880,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5741859841572930841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021941421495186724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatSoundCueEmitter
+  feedbackChannel: {fileID: 11400000, guid: a90cab32e083ca540937ca59440319e3, type: 2}
+  sourceOverride: {fileID: 5224346599127305897}
+  positionOverride: {fileID: 7655320903649355640}
+  logCue: 0
 --- !u!1 &8053183467737688487
 GameObject:
   m_ObjectHideFlags: 0

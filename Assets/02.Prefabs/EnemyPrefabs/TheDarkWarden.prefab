@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3430838522427214315}
   - component: {fileID: 229468414481566440}
   - component: {fileID: 7874025490581437285}
+  - component: {fileID: 2444387282475215264}
   m_Layer: 7
   m_Name: Visual
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &229468414481566440
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,6 +93,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &7874025490581437285
 Animator:
   serializedVersion: 7
@@ -114,6 +116,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2444387282475215264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558143031084146229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatSoundCueEmitter
+  feedbackChannel: {fileID: 11400000, guid: a90cab32e083ca540937ca59440319e3, type: 2}
+  sourceOverride: {fileID: 2026364136208323176}
+  positionOverride: {fileID: 1706504914425011532}
+  logCue: 0
 --- !u!1 &1679255805672998059
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkWardenEnemy
   explicitAgent: {fileID: 0}
   combatFeedbackChannel: {fileID: 11400000, guid: a90cab32e083ca540937ca59440319e3, type: 2}
+  attackGizmoEnabled: 1
+  attackGizmoVisibleDuration: 0.18
   layerSet: {fileID: 11400000, guid: e43a46ea0e7244047a4e7e04020a7abc, type: 2}
   attackTiming: {fileID: 11400000, guid: 03082b49cb8f9314b80ec6e8a9380d60, type: 2}
   animationSet: {fileID: 11400000, guid: 7a2f1ffe0136f804a94633ff3aa0bafe, type: 2}
