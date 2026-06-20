@@ -46,12 +46,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   explicitAgent: {fileID: 5993296014560876162}
   combatFeedbackChannel: {fileID: 11400000, guid: a90cab32e083ca540937ca59440319e3, type: 2}
+  attackGizmoEnabled: 1
+  attackGizmoVisibleDuration: 0.18
   attackSet: {fileID: 11400000, guid: 5e31cbba9d6e19747b5621bed1508de8, type: 2}
   layerSet: {fileID: 11400000, guid: e43a46ea0e7244047a4e7e04020a7abc, type: 2}
   attackExecutedChannel: {fileID: 11400000, guid: ce1232c92c2522b4aa4ab2074c598b06, type: 2}
-  useComboAttackColliders: 1
-  defaultAttackCollider: {fileID: 0}
-  comboAttackColliders:
+  attackStartedCueIds:
+  - player_combo_0
+  - player_combo_1
+  - player_combo_2
+  - player_combo_3
+  - player_roll_attack
+  - player_fall_attack
+  attackHitCueIds:
+  - player_combo_0
+  - player_combo_1
+  - player_combo_2
+  - player_combo_3
+  - player_roll_attack
+  - player_fall_attack
+  useAttackSpecificColliderOverrides: 0
+  attackSpecificColliders:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -90,7 +107,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7228522984573063061
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,6 +164,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &1236179048243056626
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +247,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 224c6c7186993cc4881868bc99eab3cd, type: 2}
   layerSet: {fileID: 11400000, guid: e43a46ea0e7244047a4e7e04020a7abc, type: 2}
   doubleJumpUnlocked: 0
+  countWallAsLandingSurface: 1
   mirrorBoxOffsetByFacing: 1
   groundCheckOffset: {x: -0.01, y: 0.11}
   wallCheckOffset: {x: 0.36, y: 1.45}
@@ -330,6 +349,7 @@ GameObject:
   - component: {fileID: 1474796776771462609}
   - component: {fileID: 6048297764310362265}
   - component: {fileID: 5900622764901493476}
+  - component: {fileID: 7752269246521202038}
   m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
@@ -354,7 +374,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6048297764310362265
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -411,6 +431,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!95 &5900622764901493476
 Animator:
   serializedVersion: 7
@@ -433,6 +454,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7752269246521202038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932131858835798794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatSoundCueEmitter
+  feedbackChannel: {fileID: 11400000, guid: a90cab32e083ca540937ca59440319e3, type: 2}
+  sourceOverride: {fileID: 8455033816210923968}
+  positionOverride: {fileID: 801678684343032467}
+  logCue: 0
 --- !u!1 &2721467813348715668
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +571,7 @@ MonoBehaviour:
   center: {fileID: 801678684343032467}
   effectObject: {fileID: 8753095876571013022}
   effectRenderer: {fileID: 724295568644986699}
+  logCast: 0
 --- !u!114 &6240780123482776265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,61 +718,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2591653168327689247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5196728851364328189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6039420609291958852}
-  - component: {fileID: 8739925548267973108}
-  m_Layer: 0
-  m_Name: UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6039420609291958852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5196728851364328189}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4823799918037244039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8739925548267973108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5196728851364328189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93aaac11538b1474aa7acfff4800171d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerUIBinder
-  hpGauge: {fileID: 0}
-  staminaGauge: {fileID: 0}
-  hpText: {fileID: 0}
-  staminaText: {fileID: 0}
-  potionIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  goldText: {fileID: 0}
-  interactionPrompt: {fileID: 0}
-  stats: {fileID: 9172823884479143405}
 --- !u!1 &5222452464976768185
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +888,7 @@ MonoBehaviour:
   imageSize: 200
   verticalOffset: 0
   horizontalSpace: 0
+  logParryFlow: 0
 --- !u!114 &6385809322925346140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +970,6 @@ Transform:
   - {fileID: 3964055404579718753}
   - {fileID: 3889157827865650365}
   - {fileID: 3955697432793080694}
-  - {fileID: 6039420609291958852}
   m_Father: {fileID: 801678684343032467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7770518418374477629
@@ -1274,7 +1257,6 @@ MonoBehaviour:
   stats: {fileID: 9172823884479143405}
   interaction: {fileID: 567985894201004420}
   saveHandler: {fileID: 6385809322925346140}
-  uiBinder: {fileID: 8739925548267973108}
   keyInventory: {fileID: 3466932914597305733}
   groundCheck: {fileID: 3086140438765268549}
   wallCheck: {fileID: 3793691704533796374}
@@ -1392,7 +1374,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &724295568644986699
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1449,3 +1431,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []

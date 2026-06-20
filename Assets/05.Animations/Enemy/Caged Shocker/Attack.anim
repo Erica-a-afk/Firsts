@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack
-  serializedVersion: 7
+  serializedVersion: 8
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -75,6 +75,7 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+      metaData: 0
     pptrCurveMapping:
     - {fileID: -497886990546017374, guid: 02fc664b846705a4e990222fc1b62bd5, type: 3}
     - {fileID: -4007872152900403947, guid: 02fc664b846705a4e990222fc1b62bd5, type: 3}
@@ -98,7 +99,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5999999
+    m_StopTime: 1.5999998
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -117,4 +118,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.2
+    functionName: EmitEnemyShockerAttack
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.71
+    functionName: EmitEnemyShockerAttack
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

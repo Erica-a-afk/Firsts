@@ -569,6 +569,8 @@ MonoBehaviour:
   mainMenuGroup: {fileID: 8302945034509392633}
   startMenuGroup: {fileID: 1033456889965462043}
   tweenConfig: {fileID: 11400000, guid: ef9fdf5a6cc44d54284bb89c50c1e353, type: 2}
+  tutorialPanelGroup: {fileID: 0}
+  tutorialCanvasRoot: {fileID: 0}
   startButton: {fileID: 8521455741231432654}
   settingsButton: {fileID: 8345064472247646140}
   quitButton: {fileID: 842764392644669923}

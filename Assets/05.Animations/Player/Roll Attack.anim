@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Roll Attack
-  serializedVersion: 7
+  serializedVersion: 8
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -84,6 +84,7 @@ AnimationClip:
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+      metaData: 0
     - serializedVersion: 2
       path: 0
       attribute: 0
@@ -93,6 +94,7 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+      metaData: 0
     pptrCurveMapping:
     - {fileID: 4572467981088063948, guid: b9cc9274832589548981abe5d8a5ee10, type: 3}
     - {fileID: -5190814446495500404, guid: b9cc9274832589548981abe5d8a5ee10, type: 3}
@@ -150,4 +152,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.17
+    functionName: EmitPlayerRollAttack
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 1bf7812a190426349b64676ed8f435c8, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
