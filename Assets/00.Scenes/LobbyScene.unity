@@ -2342,9 +2342,6 @@ MonoBehaviour:
   - sceneName: GameScene
     clip: {fileID: 8300000, guid: 72df93b72e49ad240a70000488856ece, type: 3}
     mixerGroup: {fileID: 802573867167184732, guid: ffe95348cb7c7ac48bdf5208f3a55225, type: 2}
-  - sceneName: LoadingScene
-    clip: {fileID: 0}
-    mixerGroup: {fileID: 8778247071173283212, guid: ffe95348cb7c7ac48bdf5208f3a55225, type: 2}
   dontDestroyOnLoad: 0
   loop: 1
 --- !u!82 &772305911
